@@ -1,36 +1,35 @@
-// sets date
-var currentDayEl = document.getElementById('currentDay');
+var timeDisplayed = $(".time-block");
+var currentDayEl = $('#currentDay');
+var saveBtn = $(".saveBtn");
 var today = moment().format('dddd, MMMM Do');
+
+// sets date in jumbotron
 currentDayEl.textContent = today;
 
+// functions run upon page load
 $(document).ready(function () {
-    // saveBtn click listener saves to local storage
-    $(".saveBtn").on("click", function () {
-        var text = $(this).siblings(".description").val();
-        var time = $(this).parent().attr("id")
-        localStorage.setItem(time, text);
+
+// saveBtn click listener saves to local storage
+    saveBtn.on("click", function () {
+        var event = $(this).siblings(".description").val();
+        var time = $(this).parent().attr("id");
+        localStorage.setItem(time, event);
     })
 
-    // tracks current time and sets color
+// tracks current time and sets color accordingly
     function setTimeColor() {
         var currentTime = moment().hour();
 
-        $(".time-block").each(function () {
+        timeDisplayed.each(function () {
             var timeBlock = parseInt($(this).attr("id"));
 
             if (timeBlock < currentTime) {
-                $(this).removeClass("future");
-                $(this).removeClass("present");
                 $(this).addClass("past");
             }
             else if (timeBlock === currentTime) {
-                $(this).removeClass("past");
-                $(this).removeClass("future");
                 $(this).addClass("present");
             }
             else {
-                $(this).removeClass("present");
-                $(this).removeClass("past");
                 $(this).addClass("future");
             }
         })
@@ -47,5 +46,6 @@ $(document).ready(function () {
     $("#16 .description").val(localStorage.getItem("16"));
     $("#17 .description").val(localStorage.getItem("17"));
 
+// calls function to set colors
     setTimeColor();
 })
