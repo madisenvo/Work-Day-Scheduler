@@ -7,7 +7,7 @@ This work day scheduler allows the user to add events to a daily planner. The cu
 
 ## Usage
 
-![color-coded timeblocks] (assets/images/page.png)
+![color-coded timeblocks] (/assets/images/page.png)
 
 Input events into timeblocks, and click save button to save event in local storage.
 
