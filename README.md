@@ -13,4 +13,4 @@ Input events into timeblocks, and click save button to save event in local stora
 
 ## Features
 
-Dynamic HTML and CSS enhanced by JavaScript, jQuery, Bootstrap, and Google Fonts.
+Dynamic HTML and CSS enhanced by JavaScript, jQuery, Bootstrap, Moment.js, and Google Fonts.
