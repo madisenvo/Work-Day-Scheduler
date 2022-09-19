@@ -1,10 +1,8 @@
 var timeDisplayed = $(".time-block");
-var currentDayEl = $('#currentDay');
 var saveBtn = $(".saveBtn");
-var today = moment().format('dddd, MMMM Do');
 
 // sets date in jumbotron
-currentDayEl.textContent = today;
+$("#currentDay").text(moment().format('dddd, MMMM Do'));
 
 // functions run upon page load
 $(document).ready(function () {
@@ -45,7 +43,6 @@ $(document).ready(function () {
     $("#15 .description").val(localStorage.getItem("15"));
     $("#16 .description").val(localStorage.getItem("16"));
     $("#17 .description").val(localStorage.getItem("17"));
-
-// calls function to set colors
+    
     setTimeColor();
 })
